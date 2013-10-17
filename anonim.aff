@@ -1,0 +1,323 @@
+NAME Nevek szótövesítése
+LANG hu_HU     
+VERSION Magyar 1.2     
+SET UTF-8     
+FLAG UTF-8
+COMPOUNDMIN 1     
+COMPOUNDFLAG Y     
+COMPOUNDFORBIDFLAG %     
+COMPOUNDPERMITFLAG @     
+COMPOUNDSYLLABLE 6 aáeéiíoóöőuúüű       
+SYLLABLENUM klmc     
+     
+# NOSUGGEST =     
+KEEPCASE ?     
+     
+# obsoloted     
+COMPOUNDFIRST v     
+COMPOUNDLAST x     
+ONLYROOT u     
+#COMPOUNDWORD 2 y     
+HU_KOTOHANGZO ?     
+     
+# new (> Hunspell-1.0-RC2)     
+COMPOUNDBEGIN v     
+COMPOUNDEND x     
+NEEDAFFIX u     
+ONLYINCOMPOUND |     
+# 2. parameter only for back compatibility:     
+COMPOUNDWORDMAX 2 y     
+COMPOUNDROOT y     
+     
+CHECKCOMPOUNDDUP         
+CHECKCOMPOUNDTRIPLE         
+CHECKCOMPOUNDREP         
+CHECKCOMPOUNDCASE         
+CHECKCOMPOUNDPATTERN 7        
+CHECKCOMPOUNDPATTERN ccs cs       
+CHECKCOMPOUNDPATTERN ggy gy       
+CHECKCOMPOUNDPATTERN lly ly       
+CHECKCOMPOUNDPATTERN nny ny       
+CHECKCOMPOUNDPATTERN ssz sz       
+CHECKCOMPOUNDPATTERN tty ty       
+CHECKCOMPOUNDPATTERN sz szerű       
+     
+FORBIDDENWORD w     
+WORDCHARS -.§%°0123456789–€     
+     
+NOT_GENERATE &     
+GENERATE (     
+LEMMA_PRESENT )     
+
+# CSALÁDi többesszám 
+SFX Ö Y 5
+SFX Ö 0 ék/RVT . +CSALÁD
+SFX Ö o óék/RVT o +CSALÁD
+SFX Ö e éék/RVT e +CSALÁD
+SFX Ö a áék/RVT a +CSALÁD
+SFX Ö ö őék/RVT ö +CSALÁD
+
+# magas hangrend [eéiíüöűő]
+# mély hangrend [eéoíaáuúoó]
+# mássalhangzó [qwrtzpsdfghjklyxcvbnm]
+SFX T Y 11
+SFX T ö őt ö +TÁRGYRAG
+SFX T o ót [^o]o +TÁRGYRAG
+SFX T e ét e +TÁRGYRAG
+SFX T a át a +TÁRGYRAG
+SFX T 0 t oo +TÁRGYRAG
+SFX T 0 t [áéiíóőuúüűhy-àø] +TÁRGYRAG
+SFX T 0 t [ln]y +TÁRGYRAG
+SFX T 0 t [qljnrzsy] +TÁRGYRAG
+SFX T 0 ot [^aáeéiíóöőuúüűljnrzs] +TÁRGYRAG
+SFX T 0 et [^aáeéiíóöőuúüűljnrzs] +TÁRGYRAG
+SFX T 0 at [^aáeéiíóöőuúüűljnrzs] +TÁRGYRAG
+
+SFX B Y 4     
+SFX B o óé/TRV o +BIRTOK
+SFX B ö őé/TRV ö +BIRTOK
+SFX B a áé/TRV a +BIRTOK
+SFX B 0 é/TRV . +BIRTOK
+
+SFX N Y 1
+SFX N 0 né/TRVÖB . +NEJ
+
+# Ragozás nak nál nél ból ből...
+SFX R Y 59
+SFX R 0 től . +VKTŐL
+SFX R 0 tól . +VKTŐL
+SFX R o ótól o +VKTŐL
+SFX R a ától a +VKTŐL
+SFX R e étől e +VKTŐL
+SFX R ö őtől ö +VKTŐL
+SFX R 0 nél . +VKNÉL
+SFX R 0 nál . +VKNÉL
+SFX R o ónál o +VKNÉL
+SFX R a ánál a +VKNÉL
+SFX R e énél e +VKNÉL
+SFX R ö őnél ö +VKNÉL
+SFX R 0 hoz . +VKHEZ
+SFX R 0 hez . +VKHEZ
+SFX R 0 höz . +VKHEZ
+SFX R o óhoz o +VKHEZ
+SFX R a ához a +VKHEZ
+SFX R e éhez e +VKHEZ
+SFX R ö őhöz ö +VKHEZ
+SFX R 0 nek . +VKNEK
+SFX R 0 nak . +VKNEK
+SFX R o ónak o +VKNEK
+SFX R a ának a +VKNEK
+SFX R e ének e +VKNEK
+SFX R ö őnek ö +VKNEK
+SFX R 0 ig [^oaeö] +VKIG
+SFX R o óig o +VKIG
+SFX R a áig a +VKIG
+SFX R e éig e +VKIG
+SFX R ö őig ö +VKIG
+SFX R 0 ért [^oaeö] +VKÉRT
+SFX R o óért o +VKÉRT
+SFX R a áért a +VKÉRT
+SFX R e éért e +VKÉRT
+SFX R ö őért ö +VKÉRT
+SFX R 0 ban . +VKBEN
+SFX R 0 ben . +VKBEN
+SFX R o óban o +VKBEN
+SFX R a ában a +VKBEN
+SFX R e ében e +VKBEN
+SFX R ö őben ö +VKBEN
+SFX R 0 ról . +VKRŐL
+SFX R 0 ről . +VKRŐL
+SFX R o óról o +VKRŐL
+SFX R a áról a +VKRŐL
+SFX R e éről e +VKRŐL
+SFX R ö őről ö +VKRŐL
+SFX R 0 ba . +VKBE
+SFX R 0 be . +VKBE
+SFX R o óba o +VKBE
+SFX R a ába a +VKBE
+SFX R e ébe e +VKBE
+SFX R ö őbe ö +VKBE
+SFX R 0 ból . +VKBŐL
+SFX R 0 ből . +VKBŐL
+SFX R o óból o +VKBŐL
+SFX R a ából a +VKBŐL
+SFX R e éből e +VKBŐL
+SFX R ö őből ö +VKBŐL
+
+# -val -vel
+SFX V Y 175     
+SFX V 0 vel . +VKVEL
+SFX V 0 val . +VKVEL
+SFX V o óval o +VKVEL
+SFX V a ával a +VKVEL
+SFX V e ével e +VKVEL
+SFX V ö ővel ö +VKVEL
+SFX V zs dzsé dzs +VKVEL
+SFX V zs dzsel dzs +VKVEL
+SFX V zs dzsal dzs +VKVEL
+SFX V z szé [^s]sz +VKVEL
+SFX V z szel [^s]sz +VKVEL
+SFX V z szal [^s]sz +VKVEL
+SFX V y tyé [^t]ty +VKVEL
+SFX V y tyel [^t]ty +VKVEL
+SFX V y tyal [^t]ty +VKVEL
+SFX V y nyé [^n]ny +VKVEL
+SFX V y nyel [^n]ny +VKVEL
+SFX V y nyal [^n]ny +VKVEL
+SFX V y lyé [^l]ly +VKVEL
+SFX V y lyel [^l]ly +VKVEL
+SFX V y lyal [^l]ly +VKVEL
+SFX V y gyé [^g]gy +VKVEL
+SFX V y gyel [^g]gy +VKVEL
+SFX V y gyal [^g]gy +VKVEL
+SFX V ty tyé tty +VKVEL
+SFX V ty tyel tty +VKVEL
+SFX V ty tyal tty +VKVEL
+SFX V t té tt +VKVEL
+SFX V t tel tt +VKVEL
+SFX V t tal tt +VKVEL
+SFX V sz szé ssz +VKVEL
+SFX V sz szel ssz +VKVEL
+SFX V sz szal ssz +VKVEL
+SFX V s zsé [^d]zs +VKVEL
+SFX V s zsel [^d]zs +VKVEL
+SFX V s zsal [^d]zs +VKVEL
+SFX V s sé ss +VKVEL
+SFX V s sel ss +VKVEL
+SFX V s sal ss +VKVEL
+SFX V s csé [^c]cs +VKVEL
+SFX V s csel [^c]cs +VKVEL
+SFX V s csal [^c]cs +VKVEL
+SFX V r ré rr +VKVEL
+SFX V r rel rr +VKVEL
+SFX V r ral rr +VKVEL
+SFX V p pé pp +VKVEL
+SFX V p pel pp +VKVEL
+SFX V p pal pp +VKVEL
+SFX V ny nyé nny +VKVEL
+SFX V ny nyel nny +VKVEL
+SFX V ny nyal nny +VKVEL
+SFX V n né nn +VKVEL
+SFX V n nel nn +VKVEL
+SFX V n nal nn +VKVEL
+SFX V m mé mm +VKVEL
+SFX V m mel mm +VKVEL
+SFX V m mal mm +VKVEL
+SFX V ly lyé lly +VKVEL
+SFX V ly lyel lly +VKVEL
+SFX V ly lyal lly +VKVEL
+SFX V l lé ll +VKVEL
+SFX V l lel ll +VKVEL
+SFX V l lal ll +VKVEL
+SFX V k ké kk +VKVEL
+SFX V k kel kk +VKVEL
+SFX V k kal kk +VKVEL
+SFX V j jé jj +VKVEL
+SFX V j jel jj +VKVEL
+SFX V j jal jj +VKVEL
+SFX V gy gyé ggy +VKVEL
+SFX V gy gyel ggy +VKVEL
+SFX V gy gyal ggy +VKVEL
+SFX V g gé gg +VKVEL
+SFX V g gel gg +VKVEL
+SFX V g gal gg +VKVEL
+SFX V f fé ff +VKVEL
+SFX V f fel ff +VKVEL
+SFX V f fal ff +VKVEL
+SFX V d dé dd +VKVEL
+SFX V d del dd +VKVEL
+SFX V d dal dd +VKVEL
+SFX V cs csé ccs +VKVEL
+SFX V cs csel ccs +VKVEL
+SFX V cs csal ccs +VKVEL
+SFX V c cé cc +VKVEL
+SFX V c cel cc +VKVEL
+SFX V c cal cc +VKVEL
+SFX V b bé bb +VKVEL
+SFX V b bel bb +VKVEL
+SFX V b bal bb +VKVEL
+SFX V 0 zé [^cts]z +VKVEL
+SFX V 0 zé [^cts]Z- +VKVEL
+SFX V 0 zel z +VKVEL
+SFX V 0 zal z +VKVEL
+SFX V 0 vé v +VKVEL
+SFX V 0 vé h +VKVEL
+SFX V 0 vel v +VKVEL
+SFX V 0 val v +VKVEL
+SFX V 0 vel h +VKVEL
+SFX V 0 val h +VKVEL
+SFX V 0 té th +VKVEL
+SFX V 0 té [^t]t +VKVEL
+SFX V 0 tel th +VKVEL
+SFX V 0 tal th +VKVEL
+SFX V 0 tel [^t]t +VKVEL
+SFX V 0 tal [^t]t +VKVEL
+SFX V 0 sé sh +VKVEL
+SFX V 0 sé [^tczs]s +VKVEL
+SFX V 0 sé [^t]sch +VKVEL
+SFX V 0 szé x +VKVEL
+SFX V 0 szel x +VKVEL
+SFX V 0 szal x +VKVEL
+SFX V 0 sel sh +VKVEL
+SFX V 0 sal sh +VKVEL
+SFX V 0 sel [^tczs]s +VKVEL
+SFX V 0 sal [^tczs]s +VKVEL
+SFX V 0 sel [^t]sch +VKVEL
+SFX V 0 sal [^t]sch +VKVEL
+SFX V 0 ré [^r]r +VKVEL
+SFX V 0 rel [^r]r +VKVEL
+SFX V 0 ral [^r]r +VKVEL
+SFX V 0 pé [^p]p +VKVEL
+SFX V 0 pel [^p]p +VKVEL
+SFX V 0 pal [^p]p +VKVEL
+SFX V 0 né [^n]n +VKVEL
+SFX V 0 nel [^n]n +VKVEL
+SFX V 0 nal [^n]n +VKVEL
+SFX V 0 mé [^m]m +VKVEL
+SFX V 0 mel [^m]m +VKVEL
+SFX V 0 mal [^m]m +VKVEL
+SFX V 0 lé [^l]l +VKVEL
+SFX V 0 lel [^l]l +VKVEL
+SFX V 0 lal [^l]l +VKVEL
+SFX V 0 ké [^k]k +VKVEL
+SFX V 0 kel [^k]k +VKVEL
+SFX V 0 kal [^k]k +VKVEL
+SFX V 0 jé [^j]j +VKVEL
+SFX V 0 jé [^glnt]y +VKVEL
+SFX V 0 jel [^j]j +VKVEL
+SFX V 0 jal [^j]j +VKVEL
+SFX V 0 jel [^glnt]y +VKVEL
+SFX V 0 jal [^glnt]y +VKVEL
+SFX V 0 hé [^s]ch +VKVEL
+SFX V 0 hé [^ctgsáeéuü]h +VKVEL
+SFX V 0 hel [^s]ch +VKVEL
+SFX V 0 hal [^s]ch +VKVEL
+SFX V 0 hel h +VKVEL
+SFX V 0 hal h +VKVEL
+SFX V 0 gé gh +VKVEL
+SFX V 0 gé [^g]g +VKVEL
+SFX V 0 gel gh +VKVEL
+SFX V 0 gal gh +VKVEL
+SFX V 0 gel [^g]g +VKVEL
+SFX V 0 gal [^g]g +VKVEL
+SFX V 0 fé [^f]f +VKVEL
+SFX V 0 fel [^f]f +VKVEL
+SFX V 0 fal [^f]f +VKVEL
+SFX V 0 dé [^d]d +VKVEL
+SFX V 0 del [^d]d +VKVEL
+SFX V 0 dal [^d]d +VKVEL
+SFX V 0 cé [ct]z +VKVEL
+SFX V 0 cé [^c]c +VKVEL
+SFX V 0 csé tsch +VKVEL
+SFX V 0 csé ts +VKVEL
+SFX V 0 csel tsch +VKVEL
+SFX V 0 csal tsch +VKVEL
+SFX V 0 csel ts +VKVEL
+SFX V 0 csal ts +VKVEL
+SFX V 0 cel [ct]z +VKVEL
+SFX V 0 cal [ct]z +VKVEL
+SFX V 0 cel [^c]c +VKVEL
+SFX V 0 cal [^c]c +VKVEL
+SFX V 0 bé [^b]b +VKVEL
+SFX V 0 bel [^b]b +VKVEL
+SFX V 0 bal [^b]b +VKVEL

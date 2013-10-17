@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+	<head>
+		<meta charset="UTF-8">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script src="jquery.blockUI.js"></script>
+		<script type="text/javascript">
+			$(function(){
+					$(document)
+					.ajaxStart(function(){$.blockUI({message:'<h1>Várjon kérem...</h1>'})})
+					.ajaxStop($.unblockUI);
+				$('#debug').click(function(){ $('.debug').toggle(); return false;});
+				$('#nyomoka').click(function(){
+					$('#eredmeny').load(
+						'anonimizer.php', 
+						{
+						'sz':$('#szoveg').val(), 
+						'm':$('#modszer').val(),
+						'r':$('#random').is(':checked')
+						});
+					return false;
+					});
+				});
+		</script>
+		<style>
+			textarea, .eredmeny {
+				width:800px; 
+				font:12pt arial,sans-serif;
+			}
+			textarea {height:20em; border:1px solid black;}
+			.eredmeny { border:1px solid black;}
+			.debug { display:none; color:#777; height:10px; background:gray; border 1px solid #444;}
+
+		</style>
+		
+	</head>
+	<body>
+		<h1>Anonimizáló teszt v0.3</h1>
+		<form>
+			<textarea id="szoveg">
+Matolcsytól Kossuthig bármilyen nevet be lehet írni. Valószínű, hogy néhány spéci megoldást is érdemes tesztelni, mint a Desseffytől és a Kölcseyért aztán vagy működik vagy nem. Tesco az egy áruház nem név. A Kika szintén áruház de ilyen nevű ember is van, bocs :). Mesterházinak annyi pénze van, hogy Ajrikovicsnak az álla leesett. Így ők ketten Ajrikoviccsal szerepelhetnek ebben a tesztszövegben. A Kolompár régi név, Kiskunlacháza viszont város.
+
+Az egyforma neveket egyformán kell jelölni is. Ha a Mesterházi név vagy ragozva "Mesterházinak", "Mesterházitól" alakban újra előfordul, annak az eredményben is egyformának kell lennie. 
+
+Legfeljebb két mélységig összett ragozás is működhet. Szabóéknál, Mesterháziékhoz, Szabóéhoz.
+
+			</textarea>
+			<br/>
+			Anonimizáló módszer: 
+			<select id="modszer">
+				<option value="K">Monogramm</option>
+				<option value="B">Betű</option>
+				<option value="A">Álnév</option>
+				<option value="H">Rejtés</option>
+			</select>
+			Keverés: 
+			<input id="random" type="checkbox" CHECKED></input>
+			<button id="nyomoka">Nyomkodj kérlek</button>
+			<div id="eredmeny">
+			</div>
+			<button id="debug">Debug</button>
+		</form>
+	</body>
+
+
+</html>
+<!-- vim: set ts=4 sw=4 si :-->
